@@ -42,7 +42,7 @@ class Vehicle(Base):
     model = Column(String(50), nullable=False)          # e.g., Camry, F-150
     year = Column(Integer, nullable=False)
     color = Column(String(30), nullable=True)
-    fuel_type = Column(SQLEnum(FuelType), default=FuelType.PETROL)
+    fuel_type = Column(SQLEnum(FuelType, native_enum=False, create_type=False), default=FuelType.PETROL)
     engine_capacity = Column(Float, nullable=True)      # liters
     transmission = Column(String(20), default="automatic")
 
